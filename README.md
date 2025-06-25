@@ -1,14 +1,8 @@
 # Airline_Value_Calculator
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
+## Code goal
+- user inputs flight data, including destination travel date and their miles
+- code then output redemptions, listed in ascention by estimated value per mile
 ## Installation
 
 
