@@ -8,19 +8,25 @@ window1.resizable(0,0)
 
 dates = []
 
-
+def calc():
+    ()
 input_frame = Frame(window1)
 input_frame.grid(row=0, column=0, sticky="w", padx=20, pady=20)
 
+button = Button(window1, text="Calculate", font=("Arial", 15), command=calc)
+button.grid(row=1, column=0, columnspan=1, pady=2)
 # Destination
 
 dates_view = Label(input_frame, text="Travel Dates:", font=("Arial", 25))
-dates_view.grid(column=0, row=1, columnspan=2, sticky="w", pady=5)
+dates_view.grid(column=0, row=3, columnspan=2, sticky="w", pady=5)
 
+Label(input_frame, text="Origin:", font=("Arial", 25)).grid(column=0, row=0, sticky="w", pady=1)
+Origin = Entry(input_frame, width=20)
+Origin.grid(column=1, row=0, pady=1)
 
-Label(input_frame, text="Destination:", font=("Arial", 25)).grid(column=0, row=0, sticky="w", pady=5)
+Label(input_frame, text="Destination:", font=("Arial", 25)).grid(column=0, row=5, sticky="w", pady=1)
 Destination = Entry(input_frame, width=20)
-Destination.grid(column=1, row=0, pady=5)
+Destination.grid(column=1, row=5, pady=1)
 
 
 Label(input_frame, text="Miles Available:", font=("Arial", 25)).grid(column=0, row=2, sticky="w", pady=5)
@@ -52,8 +58,10 @@ def get_date():
 
     dates_view.configure(text=f"Travel Dates: {', '.join(dates)}")
 
+
 button = Button(calendar_frame, text="Add Date", font=("Arial", 15), command=get_date)
 button.grid(row=2, column=0, columnspan=2, pady=5)
+
 
 
 extra_frame = Frame(window1)
