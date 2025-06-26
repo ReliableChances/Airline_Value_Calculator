@@ -42,8 +42,14 @@ label.grid(row=1, column=0, columnspan=2, pady=10)
 def get_date():
     selected_date = calendar.get_date()
     if selected_date not in dates:
-        dates.append(selected_date)
+        if len(dates) < 2:
+            dates.append(selected_date)
+        elif len(dates) == 2:
+            dates.append('\n' + selected_date + '\n')
+        else:
+            dates.append(selected_date)
     label.config(text=f"{selected_date}")
+
     dates_view.configure(text=f"Travel Dates: {', '.join(dates)}")
 
 button = Button(calendar_frame, text="Add Date", font=("Arial", 15), command=get_date)
