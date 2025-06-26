@@ -9,7 +9,11 @@ window1.resizable(0,0)
 dates = []
 
 def calc():
-    ()
+    global dates
+    dest = Destination.get()
+    num_mile = mile_num.get()
+    origin = Origin.get()
+    
 input_frame = Frame(window1)
 input_frame.grid(row=0, column=0, sticky="w", padx=20, pady=20)
 
