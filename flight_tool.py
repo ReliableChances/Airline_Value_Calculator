@@ -12,4 +12,4 @@ mock_data = [
 
 # VPM Calculator
 def VPM (price, tax, miles):
-    return ((price * (1 - tax/100))/miles)
+    return (round((price * (1 - tax/100))/miles, 4))
