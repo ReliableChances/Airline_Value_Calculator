@@ -12,4 +12,20 @@ mock_data = [
 
 # VPM Calculator
 def VPM (price, tax, miles):
-    return (round((price * (1 - tax/100))/miles, 4))
+    return (round((price - tax)/miles, 4))
+
+# Core Algorithm
+def optimize(origin, destination, date, data):
+    paths = []
+
+    for leg1 in data:
+        if leg1['origin'] == origin:
+            for leg2 in data:
+                if leg1['destination'] == leg2['origin'] and leg2['destination'] == destination and leg1['date'] <= leg2['date']:
+                    price = leg1['cash_value'] + leg2['cash_value']
+                    tax = leg1['fees'] + leg2['fees']
+                    miles = leg1['miles'] + leg2['miles']
+
+                    path = "Via " + leg1['destination'] + " | VPM: " + str(VPM(price, tax, miles))
+                    paths.append(path)
+    return paths
